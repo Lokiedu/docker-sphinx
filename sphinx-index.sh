@@ -3,6 +3,10 @@
 
 indexer -c /usr/local/etc/sphinx.conf --all --rotate
 
+# wait a bit
+# http://sphinxsearch.com/forum/view.html?id=11225
+sleep 10
+
 mysql -h0 -P9306 << SQL
 ATTACH INDEX Geotags TO RTINDEX GeotagsRT;
 ATTACH INDEX Hashtags TO RTINDEX HashtagsRT;
